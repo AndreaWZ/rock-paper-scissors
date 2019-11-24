@@ -1,0 +1,19 @@
+h1 {
+    color: aqua;
+    text-align: center;
+    font-size: 50px;
+}
+
+p, h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+#selection {
+    display: flex;
+    align-self: center;
+}
+
+input {
+    padding: 11px;
+}
