@@ -1,60 +1,60 @@
 
-alert("Are you ready?");
-
-let selection = prompt("rock, paper or scissors?!");
-
-let playerSelection = selection;
-
-let choice = ["rock", "paper", "scissors"];
-
-function computerSelection(choice){
-    
-    let rand = Math.floor(Math.random() * 3) + 0;
-    return (computerSelection[rand]);
-}
-
 let playerScore = 0;
 let computerScore = 0;
+const choice = ["rock", "paper", "scissors"];
 
-function playRound(playerSelection, computerSelection) {
-    while (playerScore <= 5) {
-        if(playerSelection === "rock" && computerSelection === "paper"){
-        computerScore++;
-        return "You loose!";
-    }
+function startGame() {
+    let playerSelection;
 
-        else if(playerSelection === "rock" && computerSelection === "scissors"){
-            playerScore++;
-            return "You win!";
-        }
+    for(let i = 0; i < 5; i++){
+        let computerSelection = choice[Math.floor(Math.random() * choice.length)];
+        playerSelection = prompt ("Rock, Paper or Scissors");
 
-        if(playerSelection === "scissors" && computerSelection === "paper"){
-            playerScore++;
-            return "You win!";
-        }
-
-        else if(playerSelection === "scissors" && computerSelection === "rock"){
-            computerScore++;
-            return "You loose!";
-        }
-
-        if(playerSelection === "paper" && computerSelection === "rock"){
-            playerScore++;
-            return "You win!";
-        }
-
-        else if(playerSelection === "paper" && computerSelection === "scissors"){
-            computerScore++;
-            return "You loose!";
-        }
-
-        else if(playerSelection === computerSelection){
-            return "It's tie";
-        }
+        console.log("Player: " + playerSelection);
+        console.log("Computer: " + computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        console.log('player: ' + playerScore + ', computer: ' + computerScore);
     }
     
-	
+    if(playerScore > computerScore){
+        alert("YOU WIN THE GAME!! 😎✌️");
+    }
+    
+    else if (playerScore < computerScore) {
+        alert("GAME OVER. You loose 😭");
+    }
+
+    else {
+         alert("It's a Tie 🤗");
+    }
 }
 
+function playRound(playerSelection, computerSelection) {
+   
+    if(playerSelection === "rock" && computerSelection === "scissors"){
+        playerScore++;
+        return "Player win!";
+    }
 
+    else if(playerSelection === "scissors" && computerSelection === "paper"){
+        playerScore++;
+        return "Player win!";
+    }
 
+    else if(playerSelection === "paper" && computerSelection === "rock"){
+        playerScore++;
+        return "Player win!";
+    }
+
+    else if(playerSelection === computerSelection){
+        return "It's a tie";
+    }
+
+    else {
+        computerScore++;
+        return "Computer win!";
+    }
+    
+} 
+
+startGame();
