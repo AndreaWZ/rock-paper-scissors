@@ -1,33 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Game: Rock Paper Scissors</title>
-    <link rel = "stylesheet" href="game.css">
+    <link rel = "stylesheet" href="game.css" />
     <script src= game.js></script>
-=======
-    <script src="game.js"></script>
->>>>>>> prompt-version
 </head>
 <body>
-
     <h1>Let's Play!!</h1>
-
     <p>Rock, Paper or Scissors?</p>
 
-    <!-- <form>
-        <input type="radio" name="plusone" id="selection" value="rock">
-        <input type="radio" name="plusone" id="selection" value="paper">
-        <input type="radio" name="plusone" id="selection" value="scissors">
-    </form> -->
-
-    <select id="selection">
-        <option value="rock">rock</option>
-        <option value="paper">paper</option>
-        <option value="scissors">scissors</option>
-        </select>
-
-    <h2>SCORE :</h2>
+    <div id="selection">
+        <img class="image" src="images/rock.jpg" alt="Game choice: rock" onclick="startGame('rock')"/>
+        <img class="image" src="images/paper.jpg" alt="Game choice: paper" onclick="startGame('paper')"/>
+        <img class="image" src="images/scissors.jpg" alt="Game choice: scissors" onclick="startGame('scissors')"/>
+    </div>
     
 </body>
 </html>

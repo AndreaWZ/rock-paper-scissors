@@ -1,72 +1,66 @@
-<<<<<<< HEAD
-const playerSelection = document.getElementsByTagName("input");
-let input = " ";
-=======
+let playerScore = 0;
+let computerScore = 0;
+let totalScore = 0;
+const choice = ["rock", "paper", "scissors"];
 
-function startGame() {
-    let playerSelection;
+function startGame(playerSelection){
+    let computerSelection = choice[Math.floor(Math.random() * choice.length)];
 
-    for(let i = 0; i < 5; i++){
-        let computerSelection = choice[Math.floor(Math.random() * choice.length)];
-        playerSelection = prompt ("Rock, Paper or Scissors");
+    if(totalScore < 5) {
 
+        playRound(playerSelection, computerSelection);
         console.log("Player: " + playerSelection);
         console.log("Computer: " + computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
-        console.log('player: ' + playerScore + ', computer: ' + computerScore);
-    }
-    
-    if(playerScore > computerScore){
-        alert("YOU WIN THE GAME!! 😎✌️");
-    }
-    
-    else if (playerScore < computerScore) {
-        alert("GAME OVER. You loose 😭");
+        console.log("Player: " + playerScore);
+        console.log("Computer: " + computerScore); 
+        
+
     }
 
     else {
-         alert("It's a Tie 🤗");
+        if(playerScore > computerScore){
+
+            alert("YOU WIN THE GAME!! 😎✌️ " + " Player: " + playerScore + " --- Computer: " + computerScore);
+        }
+        
+        else if (playerScore < computerScore) {
+            alert("GAME OVER. You loose 😭 " + " Computer: " + computerScore + " --- Player: " + playerScore);
+        }
+    
+        else {
+            alert("It's a Tie 🤗 " + " Player: " + playerScore + " --- Computer: " + computerScore);
+        }
+
     }
+    
 }
 
-function computerPlay() {
-    let randomNumber = Math.random();
-    if (randomNumber < 0.33) {
-      return 'rock';
-    } else if (randomNumber > 0.66) {
-      return 'paper';
-    } else {
-      return 'scissors';
-    }
-  }
-
-  let computerSelection = computerPlay;
-
 function playRound(playerSelection, computerSelection) {
-   
+
+    totalScore++;
+
     if(playerSelection === "rock" && computerSelection === "scissors"){
         playerScore++;
-        return "Player win!";
+        alert ("Player Win!! " + " Player: " + playerSelection + " --- Computer: " + computerSelection)
     }
 
     else if(playerSelection === "scissors" && computerSelection === "paper"){
         playerScore++;
-        return "Player win!";
+        alert ("Player Win!! " + " Player: " + playerSelection + "--- Computer: " + computerSelection)
     }
 
     else if(playerSelection === "paper" && computerSelection === "rock"){
         playerScore++;
-        return "Player win!";
+        alert ("Player Win!! " + " Player: " + playerSelection + " --- Computer: " + computerSelection)
     }
 
     else if(playerSelection === computerSelection){
-        return "It's a tie";
+        alert ("It's a Tie!! " + " Player: " + playerSelection + " --- Computer: " + computerSelection)
     }
 
     else {
         computerScore++;
-        return "Computer win!";
+        alert ("Computer Win!! " + " Player: " + playerSelection + " --- Computer: " + computerSelection)
     }
-    
-}
+}   
 
