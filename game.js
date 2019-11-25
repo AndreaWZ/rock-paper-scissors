@@ -3,10 +3,6 @@ const playerSelection = document.getElementsByTagName("input");
 let input = " ";
 =======
 
-let playerScore = 0;
-let computerScore = 0;
-const choice = ["rock", "paper", "scissors"];
-
 function startGame() {
     let playerSelection;
 
@@ -27,7 +23,6 @@ function startGame() {
     else if (playerScore < computerScore) {
         alert("GAME OVER. You loose 😭");
     }
->>>>>>> prompt-version
 
     else {
          alert("It's a Tie 🤗");
@@ -48,27 +43,6 @@ function computerPlay() {
   let computerSelection = computerPlay;
 
 function playRound(playerSelection, computerSelection) {
-<<<<<<< HEAD
-
-    if(playerSelection === "rock" && computerSelection === "paper"){
-        computerScore++;
-        return "You loose!";
-    }
-
-    else if(playerSelection === "rock" && computerSelection === "scissors"){
-        playerScore++;
-        return "You win!";
-    }
-
-    else if(playerSelection === "scissors" && computerSelection === "paper"){
-        playerScore++;
-        return "You win!";
-    }
-
-    else if(playerSelection === "scissors" && computerSelection === "rock"){
-        computerScore++;
-        return "You loose!";
-=======
    
     if(playerSelection === "rock" && computerSelection === "scissors"){
         playerScore++;
@@ -78,28 +52,10 @@ function playRound(playerSelection, computerSelection) {
     else if(playerSelection === "scissors" && computerSelection === "paper"){
         playerScore++;
         return "Player win!";
->>>>>>> prompt-version
     }
 
     else if(playerSelection === "paper" && computerSelection === "rock"){
         playerScore++;
-<<<<<<< HEAD
-        return "You win!";
-    }
-
-    else if(playerSelection === "paper" && computerSelection === "scissors"){
-        computerScore++;
-        return "You loose!";
-    }
-
-    else if(playerSelection === computerSelection){
-        return "It's a tie";
-    }
-    
-}
-
-
-=======
         return "Player win!";
     }
 
@@ -112,7 +68,5 @@ function playRound(playerSelection, computerSelection) {
         return "Computer win!";
     }
     
-} 
->>>>>>> prompt-version
+}
 
-startGame();

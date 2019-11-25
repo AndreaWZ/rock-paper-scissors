@@ -4,16 +4,19 @@ h1 {
     font-size: 50px;
 }
 
-p, h2 {
+p {
     font-size: 20px;
     text-align: center;
 }
 
 #selection {
     display: flex;
-    align-self: center;
+    justify-content: center;
 }
 
-input {
-    padding: 11px;
+.image {
+    border: none;
+    padding: 30px;
+    width: 120px;
+    height: 120px;
 }
